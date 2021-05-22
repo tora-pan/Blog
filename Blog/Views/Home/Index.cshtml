@@ -1,1 +1,16 @@
-﻿<h2>Home Page!</h2>
+﻿@model IEnumerable<Post>
+
+@{ 
+
+}
+
+<div>
+    <ul>
+        @foreach(var post in Model)
+            {
+                <li>
+                    <a href="#">@post.Title</a>
+                </li>
+            }
+    </ul>
+</div>

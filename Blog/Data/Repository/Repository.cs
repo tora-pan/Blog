@@ -22,7 +22,7 @@ namespace Blog.Data.Repository
             _dbContext.Posts.Add(post);
         }
 
-        public List<Post> GetAllPosts(int id)
+        public List<Post> GetAllPosts()
         {
             return _dbContext.Posts.ToList();
         }
