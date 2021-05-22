@@ -38,7 +38,6 @@ namespace Blog.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Post post)
         {
-
             _repo.AddPost(post);
 
             if(await _repo.SaveChangesAsync())
