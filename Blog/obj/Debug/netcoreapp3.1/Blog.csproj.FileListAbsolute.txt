@@ -85,3 +85,11 @@ C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
 C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
+C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\Blog.StaticWebAssets.xml
+C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Server.Kestrel.Https.dll
+C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
