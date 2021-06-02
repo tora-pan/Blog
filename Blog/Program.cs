@@ -18,6 +18,9 @@ namespace Blog
         {
             var host = CreateHostBuilder(args).Build();
 
+            try
+            {
+
             //seed admin
             var scope = host.Services.CreateScope();
 
@@ -32,13 +35,13 @@ namespace Blog
             //create admin
             var adminRole = new IdentityRole("Admin");
 
-            if (dbContext.Roles.Any())
+            if (!dbContext.Roles.Any())
             {
                 //create a role
                 roleMgr.CreateAsync(adminRole).GetAwaiter().GetResult();
             }
 
-            if(dbContext.Users.Any(u => u.UserName == "admin"))
+            if(!dbContext.Users.Any(u => u.UserName == "admin"))
             {
                 //create an admin
                 var adminUser = new IdentityUser
@@ -46,11 +49,15 @@ namespace Blog
                     UserName = "admin",
                     Email = "admin@test.com"
                 };
-                userMgr.CreateAsync(adminUser, "password");
+                var result = userMgr.CreateAsync(adminUser, "password").GetAwaiter().GetResult();
                 //add admin role to user
                 userMgr.AddToRoleAsync(adminUser, adminRole.Name).GetAwaiter().GetResult();
             }
-
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             host.Run();
         }
 

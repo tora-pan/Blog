@@ -30,8 +30,9 @@ namespace Blog
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(_config["DefaultConnection"]));
-            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(_config["DefaultConnection"]), ServiceLifetime.Transient);
+            
+            services.AddDefaultIdentity<IdentityUser>(options =>
             {
                 options.Password.RequireDigit = false;
                 options.Password.RequireNonAlphanumeric = false;
@@ -40,7 +41,10 @@ namespace Blog
             })
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
+
             services.AddTransient<IRepository, Repository>();
+
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,9 +61,9 @@ namespace Blog
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {
