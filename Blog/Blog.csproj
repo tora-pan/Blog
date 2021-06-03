@@ -20,4 +20,8 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="5.0.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Content\blog\" />
+  </ItemGroup>
+
 </Project>

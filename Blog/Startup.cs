@@ -14,6 +14,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Blog.Data.Repository;
 using Microsoft.AspNetCore.Identity;
+using Blog.Data.FileManager;
 
 namespace Blog
 {
@@ -32,17 +33,23 @@ namespace Blog
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(_config["DefaultConnection"]), ServiceLifetime.Transient);
             
-            services.AddDefaultIdentity<IdentityUser>(options =>
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
                 options.Password.RequireDigit = false;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredLength = 6;
             })
-                .AddRoles<IdentityRole>()
+                //.AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Auth/Login";
+            });
+
             services.AddTransient<IRepository, Repository>();
+            services.AddTransient<IFileManager, FileManager >();
 
             services.AddMvc();
         }

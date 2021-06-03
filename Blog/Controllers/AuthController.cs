@@ -31,7 +31,7 @@ namespace Blog.Controllers
             var result = await _signInManager.PasswordSignInAsync(viewModel.UserName, viewModel.Password, false, false);
             
             
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Panel");
         }
 
         [HttpGet]
