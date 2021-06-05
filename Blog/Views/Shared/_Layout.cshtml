@@ -11,11 +11,12 @@
     <div>
         <nav>
             <a asp-controller="Home" asp-action="Index">Home</a>
-            <a asp-controller="Panel" asp-action="Edit">Create Post</a>
-            <a asp-controller="Panel" asp-action="Index">Admin Panel</a>
+            @*<a asp-controller="Panel" asp-action="Edit">Create Post</a>*@
 
             @if (User.Identity.IsAuthenticated)
             {
+                <a asp-controller="Panel" asp-action="Index">Admin Panel</a>
+                <a asp-controller="Panel" asp-action="Edit">Create Post</a>
                 <a asp-controller="Auth" asp-action="Logout">Admin Logout</a>
             }
             else
@@ -27,5 +28,6 @@
     <div>
         @RenderBody()
     </div>
+    @RenderSection("scripts", false)
 </body>
 </html>

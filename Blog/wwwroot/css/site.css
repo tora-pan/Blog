@@ -61,10 +61,20 @@ nav {
     position: relative;
     display: flex;
     height: 400px;
-    margin: 2rem 0;
+    margin: 2rem 10px;
     box-shadow: 0 0 5px 0 #000;
 }
 .post img{
     width: 100%;
     object-fit: cover;
+}
+
+.post-body {
+    margin: 1rem;
+    background-color: #fff;
+    opacity: .8;
+}
+
+.no-shadow{
+    box-shadow: none;
 }
