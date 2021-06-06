@@ -27,6 +27,13 @@ namespace Blog.Data.Repository
             return _dbContext.Posts.ToList();
         }
 
+        public List<Post> GetAllPosts(string category)
+        {
+            return _dbContext.Posts
+                .Where(p => p.Category.ToLower().Equals(category.ToLower()))
+                .ToList();
+        }
+
         public Post GetPost(int id)
         {
             // check to see if the post 'p' has an ID == the id passed in

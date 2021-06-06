@@ -61,7 +61,7 @@ nav {
     position: relative;
     display: flex;
     height: 400px;
-    margin: 2rem 10px;
+    margin: 5px;
     box-shadow: 0 0 5px 0 #000;
 }
 .post img{
@@ -70,11 +70,19 @@ nav {
 }
 
 .post-body {
-    margin: 1rem;
+    margin: -5px 5px 0;
+    padding: 20px 5px;
     background-color: #fff;
-    opacity: .8;
+    opacity: 1;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .no-shadow{
     box-shadow: none;
+}
+
+.form-box{
+    background-color: #fff;
+    opacity: .9;
 }
