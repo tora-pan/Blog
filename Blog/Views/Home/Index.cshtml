@@ -11,15 +11,29 @@
 </div>
 
 
-<div class="container">
-    @foreach(var post in Model)
+<div class="site-container">
+
+    <div class="article-container">
+
+    @foreach (var post in Model)
     {
         var image_path = $"/Image/{post.Image}";
-        <a class="post" asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">
-            <img src="@image_path" alt="photo" />
-            <span class="title">
-                @post.Title
-            </span>
-        </a>
-     }
+        
+        <article class="article-card">
+            <figure class="article-img">
+                <img src="@image_path" alt="img">
+            </figure>
+            <div class="article-content">
+                <a href="#" class="card-category">@post.Category</a>
+                <h3 class="card-title">@post.Title</h3>
+                <p class="card-exerpt">
+                    @post.Description
+                </p>
+                <span class="read-more-btn">
+                    <a asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">Read More</a>
+                </span>
+            </div>
+        </article>
+    }
+    </div>
 </div>
