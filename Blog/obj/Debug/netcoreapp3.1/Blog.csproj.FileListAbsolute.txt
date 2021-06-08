@@ -101,3 +101,5 @@ C:\Projects\Blog\Blog\obj\Debug\netcoreapp3.1\Blog.MvcApplicationPartsAssemblyIn
 C:\Projects\Blog\Blog\obj\Debug\netcoreapp3.1\Razor\Views\Panel\Index.cshtml.g.cs
 C:\Projects\Blog\Blog\obj\Debug\netcoreapp3.1\Blog.csprojAssemblyReference.cache
 C:\Projects\Blog\Blog\obj\Debug\netcoreapp3.1\Razor\Views\Panel\Edit.cshtml.g.cs
+C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\appsettings.production.Development.json
+C:\Projects\Blog\Blog\bin\Debug\netcoreapp3.1\appsettings.production.json

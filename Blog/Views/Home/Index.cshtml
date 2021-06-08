@@ -4,6 +4,7 @@
     ViewBag.Title = "Blog Webiste";
     ViewBag.Description = "A simple blog about my path to becoming a software developer.";
     ViewBag.Keywords = "blog programing language learning family life";
+    var base_path = Context.Request.PathBase;
 }
 
 <div class="main-img">
@@ -17,7 +18,7 @@
 
     @foreach (var post in Model)
     {
-        var image_path = $"/Image/{post.Image}";
+        var image_path = $"{base_path}/Image/{post.Image}";
         
         <article class="article-card">
             <figure class="article-img">
